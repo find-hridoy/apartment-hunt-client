@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./Styles/App.scss";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import HomeDetails from "./Pages/HomeDetails";
+import AddRentHouse from "./Pages/AddRentHouse";
+import BookingList from "./Pages/BookingList";
+import MyRent from "./Pages/MyRent";
+import Login from "./Pages/Login";
+import CreateAccount from "./Pages/CreateAccount";
+import NotFound from "./Pages/NotFount";
+import { Provider } from "react-redux";
+import store from "./store";
+// import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/homeDetails" component={HomeDetails} />
+            <Route exact path="/bookingList" component={BookingList} />
+            <Route exact path="/addRentHouse" component={AddRentHouse} />
+            <Route exact path="/myRent" component={MyRent} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/createAccount" component={CreateAccount} />
+            <Route exact path="*" component={NotFound} />
+          </Switch>
+        </Router>
+      </Provider>
+    </>
   );
 }
 

@@ -1,0 +1,15 @@
+$theme-colors: (
+  "primary": #275a53,
+  "dark": #16322e,
+  "secondary": #747474,
+  "black": #000000,
+  "gray": #606268,
+);
+// All Sass file
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../Styles/Navbar.scss";
+@import "../Styles/Banner.scss";
+@import "../Styles/Sidebar.scss";
+@import "../Styles/Common.scss";
+@import "../Styles/AddRentHouseForm.scss";
+// @import "../Styles/HouseRent.scss";
